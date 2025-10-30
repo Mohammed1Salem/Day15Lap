@@ -50,14 +50,14 @@ public class Main {
 
                     System.out.println("Please only enter numbers bigger than zero");
                     while (radius <= 0 && height <= 0 && width <= 0 && base <= 0){
-                    System.out.println("Radius:");
-                    radius = sc.nextDouble();
-                    System.out.println("Height:");
-                    height = sc.nextDouble();
-                    System.out.println("Width:");
-                    width = sc.nextDouble();
-                    System.out.println("Base:");
-                    base = sc.nextDouble();
+                        System.out.println("Radius:");
+                        radius = sc.nextDouble();
+                        System.out.println("Height:");
+                        height = sc.nextDouble();
+                        System.out.println("Width:");
+                        width = sc.nextDouble();
+                        System.out.println("Base:");
+                        base = sc.nextDouble();
                     }
                     System.out.println("Radius: "+radius+"\nHeight: "+height+"\nWidth: " +width+ "\nBase: " + base+"\nAll Been Set Successfully");
                     break;
@@ -81,29 +81,44 @@ public class Main {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    while (answer != -1){
+                    while (true){
                         int randomGame = random.nextInt(1,2);
                         switch (randomGame){
-                        case 1:
-                            int radiusTest = random.nextInt(1,20);
-                            System.out.println("whats the area of circle of radius: "+radiusTest);
-                            Circle cTest = new Circle(radiusTest);
-                            answer = sc.nextInt();
-                            int intanswercir = (int) cTest.calculateArea();
-                            if(answer == intanswercir){
-                                System.out.println("Correct!");
-                            }else System.out.println("Wrong...");
-                        case 2:
-                            int widthTest = random.nextInt(1,20);
-                            int heightTest = random.nextInt(1,20);
-                            System.out.println("whats the area of Rectangle of height: "+heightTest+" and width of "+widthTest);
-                            Rectangle rTest = new Rectangle(heightTest,widthTest);
-                            answer = sc.nextInt();
+                            case 1:
+                                int radiusTest = random.nextInt(1,20);
+                                System.out.println("whats the area of circle of radius: "+radiusTest);
+                                Circle cTest = new Circle(radiusTest);
+                                answer = sc.nextInt();
+                                if(answer == -1){break;}
+                                int intanswercir = (int) cTest.calculateArea();
+                                if(answer == intanswercir){
+                                    System.out.println("Correct!");
+                                }else System.out.println("Wrong...");
+                            case 2:
+                                int widthTestRec = random.nextInt(1,20);
+                                int heightTestRec = random.nextInt(1,20);
+                                System.out.println("whats the area of Rectangle of height: "+heightTestRec+" and width of "+widthTestRec);
+                                Rectangle rTest = new Rectangle(heightTestRec,widthTestRec);
+                                answer = sc.nextInt();
+                                if(answer == -1){break;}
 
-                            int intanswerRec = (int) rTest.calculateArea();
-                            if(answer == intanswerRec){
-                                System.out.println("Correct!");
-                            }else System.out.println("Wrong...");
+                                int intanswerRec = (int) rTest.calculateArea();
+
+                                if(answer == intanswerRec){
+                                    System.out.println("Correct!");
+                                }else System.out.println("Wrong...");
+                            case 3:
+                                int widthTestTTri = random.nextInt(1,20);
+                                int baseTestTri = random.nextInt(1,20);
+                                System.out.println("whats the area of Rectangle of height: "+widthTestTTri+" and width of "+baseTestTri);
+                                Triangle tTest = new Triangle(widthTestTTri,baseTestTri);
+                                answer = sc.nextInt();
+                                if(answer == -1){break;}
+
+                                int intanswerTri = (int) tTest.calculateArea();
+                                if(answer == intanswerTri){
+                                    System.out.println("Correct!");
+                                }else System.out.println("Wrong...");
                         }
                         break;
                     }
@@ -163,15 +178,6 @@ public class Main {
         System.out.println(t2.calculateArea());
         System.out.println(t2.calculateCircumference());
         System.out.println(t2);
-
-    }
-    static void areaGameCircle(){
-
-        }
-
-    static void areaGameRectangle(){
-
-
 
     }
 }
