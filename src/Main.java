@@ -82,7 +82,7 @@ public class Main {
                         throw new RuntimeException(e);
                     }
                     while (true){
-                        int randomGame = random.nextInt(1,2);
+                        int randomGame = random.nextInt(1,3);
                         switch (randomGame){
                             case 1:
                                 int radiusTest = random.nextInt(1,20);
